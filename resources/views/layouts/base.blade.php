@@ -24,14 +24,14 @@
 
     <title>SurfsideMedia</title>
 
-    <link id="rtl-link" rel="stylesheet" type="text/css"  href="{{assets('assets/css/vendors/bootstrap.css')) }}">
-    <link rel="stylesheet" href="{{assets('assets/css/vendors/ion.rangeSlider.min.css')) }}">
-    <link rel="stylesheet" type="text/css" href="{{assets('assets/css/vendors/font-awesome.css')) }}">
-    <link rel="stylesheet" type="text/css" href="{{assets('assets/css/vendors/feather-icon.css')) }}">
-    <link rel="stylesheet" type="text/css" href="{{assets('assets/css/vendors/animate.css')) }}">
-    <link rel="stylesheet" type="text/css" href="{{assets('assets/css/vendors/slick/slick.css')) }}">
-    <link rel="stylesheet" type="text/css" href="{{assets('assets/css/vendors/slick/slick-theme.css')) }}">
-    <link id="color-link" rel="stylesheet" type="text/css" href="{{assets('assets/css/demo4.css')) }}">
+    <link id="rtl-link" rel="stylesheet" type="text/css"  href="{{asset('assets/css/vendors/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{asset('assets/css/vendors/ion.rangeSlider.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/font-awesome.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/feather-icon.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/animate.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/slick/slick.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/slick/slick-theme.css') }}">
+    <link id="color-link" rel="stylesheet" type="text/css" href="{{asset('assets/css/demo4.css') }}">
     <style>
         .h-logo {
             max-width: 185px !important;
@@ -47,7 +47,7 @@
             }
         }
     </style>
-    <link rel="stylesheet" href="{{assets('assets/css/custom.css')) }}">
+    <link rel="stylesheet" href="{{asset('assets/css/custom.css') }}">
 
 
 </head>
