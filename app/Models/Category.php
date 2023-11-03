@@ -12,4 +12,4 @@ class Category extends Model
         return $this->hasMany(product::class,'category_id');
     }
 }
-}
+

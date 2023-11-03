@@ -19,11 +19,12 @@ class ProductFactory extends Factory
     public function definition(): array
     {
         $product_name = $this->faker->unique()->words($nb=2,$astext = true);
-        $slug=str::slug($product_name);
+        $slug=Str::slug($product_name);
         $image_name=$this->faker->numberBetween(1,24).'.jpg';
         return [
-            'name' => Str::title($product_name);
-            'slug' => $slug,
+            'name' => 'name',
+            'slug' => $slug, // Corrected the syntax here
+
             'short_description' => $this->faker->text(200),
             'description' => $this->faker->text(500),
             'regular_price' => $this->faker->numberBetween(1,22),
@@ -31,6 +32,7 @@ class ProductFactory extends Factory
             'stock_status' => 'instock',
             'quantity' => $this->faker->numberBetween(100,200),
             'image' => $image_name,
+            'images' => $image_name,
             'category_id' => $this->faker->numberBetween(1,6),
             'brand_id' => $this->faker->numberBetween(1,6),
 
