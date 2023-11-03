@@ -20,6 +20,7 @@ class ProductFactory extends Factory
     {
         $product_name = $this->faker->unique()->words($nb=2,$astext = true);
         $slug=str::slug($product_name);
+        $image_name=$this->faker->numberBetween(1,24).'.jpg';
         return [
             'name' => Str::title($product_name);
             'slug' => $slug,
@@ -29,7 +30,7 @@ class ProductFactory extends Factory
             'SKU' =>'SMD'.$this->faker->numberBetween(100,500),
             'stock_status' => 'instock',
             'quantity' => $this->faker->numberBetween(100,200),
-            'image' => $this->faker->numberBetween(1,24).'.jpg',
+            'image' => $image_name,
             'category_id' => $this->faker->numberBetween(1,6),
             'brand_id' => $this->faker->numberBetween(1,6),
 
