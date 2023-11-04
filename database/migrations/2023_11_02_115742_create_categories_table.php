@@ -23,8 +23,13 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down(): void
+    public function down()
     {
+        Schema::table('products', function (Blueprint $table) {
+            // Remove foreign key constraint
+            $table->dropForeign(['category_id']);
+        });
+    
         Schema::dropIfExists('categories');
     }
 };
