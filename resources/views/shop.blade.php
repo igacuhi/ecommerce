@@ -452,13 +452,13 @@
                                 <div class="img-wrapper">
                                     <div class="front">
                                         <a href="product/nihil-beatae-sit-sed.html">
-                                            <img src="assets/images/fashion/product/front/12.jpg"
+                                            <img src="assets/images/fashion/product/front/{{$product->image}}"
                                                 class="bg-img blur-up lazyload" alt="">
                                         </a>
                                     </div>
                                     <div class="back">
                                         <a href="product/nihil-beatae-sit-sed.html">
-                                            <img src="assets/images/fashion/product/back/12.jpg"
+                                            <img src="assets/images/fashion/product/back/{{$product->image}}"
                                                 class="bg-img blur-up lazyload" alt="">
                                         </a>
                                     </div>
@@ -484,7 +484,7 @@
                                 </div>
                                 <div class="product-details">
                                     <div class="rating-details">
-                                        <span class="font-light grid-content">Cupiditate Minus</span>
+                                        <span class="font-light grid-content">{{$product->category->name}}</span>
                                         <ul class="rating mt-0">
                                             <li>
                                                 <i class="fas fa-star theme-color"></i>
@@ -505,15 +505,13 @@
                                     </div>
                                     <div class="main-price">
                                         <a href="product/nihil-beatae-sit-sed.html" class="font-default">
-                                            <h5 class="ms-0">Nihil Beatae Sit Sed</h5>
+                                            <h5 class="ms-0">{{$product->name}}</h5>
                                         </a>
                                         <div class="listing-content">
-                                            <span class="font-light">Cupiditate Minus</span>
-                                            <p class="font-light">Aut et dolores ipsam dolores aspernatur. Id nostrum
-                                                itaque maxime ea at inventore nam. Repudiandae dolor recusandae sint
-                                                magnam praesentium.</p>
+                                            <span class="font-light">{{$product->category->name}}</span>
+                                            <p class="font-light">{{$product->short_description}}</p>
                                         </div>
-                                        <h3 class="theme-color">$19</h3>
+                                        <h3 class="theme-color">{{$product->regular_price}}</h3>
                                         <button class="btn listing-content">Add To Cart</button>
                                     </div>
                                 </div>
