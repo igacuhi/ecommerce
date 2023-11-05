@@ -1,6 +1,11 @@
 @extends('layouts.base')
 @push('styles')
 <link id="color-link" rel="stylesheet" type="text/css" href="assets/css/demo2.css">
+<style>
+    nav svg{
+        height:20px;
+    }
+    </style>
 
 @endpush
 @section('content')
@@ -519,9 +524,9 @@
                         </div>
 
                         @endforeach
-
+{{$products->links()}}
                     </div>
-                    <nav class="page-section">
+                   {{-- <nav class="page-section">
                         <ul class="pagination">
                             <li class="page-item">
                                 <a class="page-link" href="javascript:void(0)" aria-label="Previous"
@@ -549,7 +554,7 @@
                             </li>
 
                         </ul>
-                    </nav>
+                    </nav>--}}
 
                 </div>
             </div>
