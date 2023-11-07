@@ -1,4 +1,4 @@
-@if($paginator->pages())
+@if($paginator->hasPages())
     <nav class="page-section">
         <ul class="pagination">
             @if($paginator->onFirstPage())
@@ -28,7 +28,7 @@
 @endif
 @if(is_array($element))
     @foreach($element as $page=>$url)
-        @if($page == $paginator->currentPage)
+        @if($page == $paginator->currentPage())
             <li class="page-item active">
                 <a class="page-link" href="javascript:void(0)">{{$page}}</a>
             </li>
