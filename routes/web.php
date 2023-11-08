@@ -20,6 +20,7 @@ use App\Http\Controllers\shopcontroller;
 
 Route::get('/', [AppController::class, 'index'])->name('app.index');
 Route::get('/shop',[shopcontroller::class,'index'])->name('shop.index');
+Route::get('/product/{slug}',[shopcontroller::class,'productDetails'])->name('shop.product.details');
 Auth::routes();
 
 Route::middleware('auth')->group(function(){
