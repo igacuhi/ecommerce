@@ -20,7 +20,11 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
+                @if($product)
                 <h3>{{$product->name}}</h3>
+                @else
+                <p>No product found</p>
+            @endif
                 <nav>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
@@ -28,7 +32,11 @@
                                 <i class="fas fa-home"></i>
                             </a>
                         </li>
+                        @if ($product)
                         <li class="breadcrumb-item active" aria-current="page">{{$product->name}}</li>
+                        @else
+                        <li class="breadcrumb-item active" aria-current="page">Product Not Found</li>
+                        @endif
                     </ol>
                 </nav>
             </div>
@@ -47,11 +55,16 @@
                                 <div class="col-lg-2">
                                     <div class="details-image-vertical black-slide rounded">
                                         <div>
+                                            @if($product)
                                             <img src="{{asset('assets/images/fashion/product/front')}}/{{$product->image}}" class="img-fluid blur-up lazyload" alt="{{$product->name}}">
+                                            @else
+                                            <p>No product found</p>
+                                        @endif
                                         </div>
+                                        @if($product)
                                         @if($product->images)
                                         @php
-                                            $images =explode('',$product->images);
+                                            $images =explode(',',$product->images);
                                         @endphp
                                         @foreach($images as $image)
                                         <div>
@@ -59,24 +72,45 @@
                                                 class="img-fluid blur-up lazyload" alt="">
                                         </div>
                                         @endforeach 
-                                        @endif
+                                        @else
+                                        <p>No product images found</p>
+                                    @endif
+                                @else
+                                    <p>No product found</p>
+                                @endif
                                     </div>
                                 </div>
                                 <div class="col-lg-10">
                                     <div class="details-image-1 ratio_asos">
                                         <div>
+                                            @if($product)
                                             <img src="{{asset('assets/images/fashion/product/front')}}/{{$product->image}}" 
                                                 class="img-fluid w-100 image_zoom_cls-0 blur-up lazyload" alt="{{$product->name}}">
+                                                @else
+    <p>No product found</p>
+@endif
                                         </div>
+                                        @if($product)
                                         @if($product->images)
                                         @php
                                             $images =explode('',$product->images);
                                         @endphp
+                                     @if(count($images) > 0)
                                         @foreach($images as $image)
+                                        @if($image)
                                             <div>
                                                 <img src="{{asset('assets/images/fashion/product/front')}}/{{$image}}" class="img-fluid w-100 image_zoom_cls-1 blur-up lazyload" alt="">
                                             </div>
+                                            @endif
                                         @endforeach 
+                                        @else
+                <p>No product images found</p>
+            @endif
+        @else
+            <p>No product images found</p>
+        @endif
+    @else
+        <p>No product found</p>
                                         @endif                                     
                                     </div>
                                 </div>
