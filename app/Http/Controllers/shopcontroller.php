@@ -14,6 +14,8 @@ class shopcontroller extends Controller
     }
     public function productDetails($slug){
         $product = product::where('slug','')->first();
-        return view('details',['product'=>$product]);
+        $rproducts=product::where('slug','!=',$slug)->inRandomOrder('id')->get()->take(8); 
+        return view('details',['product'=>$product,'rproducts'=>$rproducts]);
+
     }
 }
