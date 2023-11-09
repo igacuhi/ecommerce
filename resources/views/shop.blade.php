@@ -5,6 +5,9 @@
     nav svg{
         height:20px;
     }
+    .product-box .product-details h5 {
+    width: 100%;
+    }
     </style>
 
 @endpush
