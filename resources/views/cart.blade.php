@@ -53,13 +53,13 @@
                         @for each($CartItems as $Item)
                         <tr>
                             <td>
-                                <a href="../product/details.html">
-                                    <img src="../assets/images/fashion/product/front/24.jpg" class="blur-up lazyloaded"
-                                        alt="">
+                                <a href="{{route('shop.products.details',['slug'=>$item->model->slug])}}">
+                                    <img src="{{asset('assets/images/fashion/product/front')}}/{{$item->model->image}}" class="blur-up lazyloaded"
+                                        alt="{{$item->model->name}}">
                                 </a>
                             </td>
                             <td>
-                                <a href="../product/details.html">{{$item->model->name}}</a>
+                                <a href="{{route('shop.products.details',['slug'=>$item->model->slug])}}">{{$item->model->name}}</a>
                                 <div class="mobile-cart-content row">
                                     <div class="col">
                                         <div class="qty-box">
@@ -89,12 +89,12 @@
                                     <div class="input-group">
                                         <input type="number" name="quantity"
                                             data-rowid="ba02b0dddb000b25445168300c65386d"
-                                            class="form-control input-number" value="1">
+                                            class="form-control input-number" value="{{$item->qty}}">
                                     </div>
                                 </div>
                             </td>
                             <td>
-                                <h2 class="td-color">${{$item->subtotal}}</h2>
+                                <h2 class="td-color">${{$item->subtotal()}}</h2>
                             </td>
                             <td>
                                 <a href="javascript:void(0)">
