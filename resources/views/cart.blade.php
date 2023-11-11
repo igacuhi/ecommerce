@@ -35,6 +35,7 @@
 <!-- Cart Section Start -->
 <section class="cart-section section-b-space">
     <div class="container">
+        @if($CartItems->Count() > 0)
         <div class="row">
             <div class="col-md-12 text-center">
                 <table class="table cart-table">
@@ -49,7 +50,7 @@
                         </tr>
                     </thead>
                     <tbody>
-
+                        @for each()
                         <tr>
                             <td>
                                 <a href="../product/details.html">
@@ -219,6 +220,16 @@
                 </div>
             </div>
         </div>
+        @else
+            <div class="row">
+                <div class="col-md-12-text-center">
+                    <h2>Your cart is empty!</h2>
+                    <h5 class="mt-3">Add items to it now.</h5>
+                    <a href="{{route('shop.index')}}" class="btn-btn-warning mt-5">shop now
+                    </a>
+                </div>
+            </div>
+        @endif
     </div>
 </section>
 @endsection
