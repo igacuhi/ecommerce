@@ -50,7 +50,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @for each()
+                        @for each($CartItems as $Item)
                         <tr>
                             <td>
                                 <a href="../product/details.html">
@@ -59,8 +59,7 @@
                                 </a>
                             </td>
                             <td>
-                                <a href="../product/details.html">A Porro
-                                    Voluptatibus Dolores</a>
+                                <a href="../product/details.html">{{$item->model->name}}</a>
                                 <div class="mobile-cart-content row">
                                     <div class="col">
                                         <div class="qty-box">
@@ -71,7 +70,7 @@
                                         </div>
                                     </div>
                                     <div class="col">
-                                        <h2>$18</h2>
+                                        <h2>${{$item->price}}</h2>
                                     </div>
                                     <div class="col">
                                         <h2 class="td-color">
@@ -83,7 +82,7 @@
                                 </div>
                             </td>
                             <td>
-                                <h2>$18</h2>
+                                <h2>${{$item->price}}</h2>
                             </td>
                             <td>
                                 <div class="qty-box">
@@ -95,7 +94,7 @@
                                 </div>
                             </td>
                             <td>
-                                <h2 class="td-color">$18.00</h2>
+                                <h2 class="td-color">${{$item->subtotal}}</h2>
                             </td>
                             <td>
                                 <a href="javascript:void(0)">
@@ -103,59 +102,7 @@
                                 </a>
                             </td>
                         </tr>
-
-                        <tr>
-                            <td>
-                                <a href="../product/details.html">
-                                    <img src="../assets/images/fashion/product/front/7.jpg" class="blur-up lazyloaded"
-                                        alt="">
-                                </a>
-                            </td>
-                            <td>
-                                <a href="../product/details.html">Et
-                                    Voluptatem Repellendus Pariatur</a>
-                                <div class="mobile-cart-content row">
-                                    <div class="col">
-                                        <div class="qty-box">
-                                            <div class="input-group">
-                                                <input type="text" name="quantity" class="form-control input-number"
-                                                    value="1">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <h2>$8</h2>
-                                    </div>
-                                    <div class="col">
-                                        <h2 class="td-color">
-                                            <a href="javascript:void(0)">
-                                                <i class="fas fa-times"></i>
-                                            </a>
-                                        </h2>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <h2>$8</h2>
-                            </td>
-                            <td>
-                                <div class="qty-box">
-                                    <div class="input-group">
-                                        <input type="number" name="quantity"
-                                            data-rowid="8eb747b95b9862e9d83031beb9938720"
-                                            class="form-control input-number" value="1">
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <h2 class="td-color">$8.00</h2>
-                            </td>
-                            <td>
-                                <a href="javascript:void(0)">
-                                    <i class="fas fa-times"></i>
-                                </a>
-                            </td>
-                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
