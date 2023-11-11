@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AppController;
@@ -21,6 +22,7 @@ use App\Http\Controllers\shopcontroller;
 Route::get('/', [AppController::class, 'index'])->name('app.index');
 Route::get('/shop',[shopcontroller::class,'index'])->name('shop.index');
 Route::get('/product/{slug}',[shopcontroller::class,'productDetails'])->name('shop.product.details');
+Route::get('/cart',[CartController::class,'index'])->name('cart.index');
 Auth::routes();
 
 Route::middleware('auth')->group(function(){
