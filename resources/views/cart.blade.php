@@ -152,10 +152,9 @@
                                 <div class="total-details">
                                     <div class="top-details">
                                         <h3>Cart Totals</h3>
-                                        <h6>Sub Total <span>$26.00</span></h6>
-                                        <h6>Tax <span>$5.46</span></h6>
-
-                                        <h6>Total <span>$31.46</span></h6>
+                                        <h6>Sub Total <span>${{Cart::instance('cart')->subtotal()}}</span></h6>
+                                        <h6>Tax <span>${{Cart::instance('cart')->tax()}}</span></h6>
+                                        <h6>Total <span>${{Cart::instance('cart')->total()}}</span></h6>
                                     </div>
                                     <div class="bottom-details">
                                         <a href="checkout">Process Checkout</a>
