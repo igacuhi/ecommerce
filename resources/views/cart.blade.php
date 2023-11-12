@@ -50,7 +50,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @for each($CartItems as $Item)
+                        @for each($CartItems as $Item)     
                         <tr>
                             <td>
                                 <a href="{{route('shop.products.details',['slug'=>$item->model->slug])}}">
