@@ -23,7 +23,7 @@ Route::get('/', [AppController::class, 'index'])->name('app.index');
 Route::get('/shop',[shopcontroller::class,'index'])->name('shop.index');
 Route::get('/product/{slug}',[shopcontroller::class,'productDetails'])->name('shop.product.details');
 Route::get('/cart',[CartController::class,'index'])->name('cart.index');
-Route::get('/cart/store',[CartController::class,'addToCart'])->name('cart.store');
+Route::post('/cart/store',[CartController::class,'addToCart'])->name('cart.store');
 Auth::routes();
 
 Route::middleware('auth')->group(function(){
