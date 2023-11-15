@@ -171,7 +171,7 @@
                                             <a href="{{route('cart.index')}}">
                                                 <i data-feather="shopping-cart"></i>
                                                 <span id="cart-count" class="label label-theme rounded-pill">
-                                                    {{cart::instance('cart')->content()->count}}
+                                                    {{Cart::instance('cart')->content()->count}}
                                                 </span>
                                             </a>
                                         </div>

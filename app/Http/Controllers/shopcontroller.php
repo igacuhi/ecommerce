@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\Product;
+use Gloudemans\Shoppingcart\Facades\Cart; // Replace "App" with the actual namespace
+
 
 use Illuminate\Http\Request;
 
