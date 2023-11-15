@@ -87,7 +87,7 @@
                             <td>
                                 <div class="qty-box">
                                     <div class="input-group">
-                                        <input type="number" name="quantity" data-rowid="{{$item->subtotal}} class="form-control input-number" value="{{$item->qty}}">
+                                        <input type="number" name="quantity" data-rowid="{{$item->subtotal}}" onchange="updateQuantity(this)" class="form-control input-number" value="{{$item->qty}}">
                                     </div>
                                 </div>
                             </td>
@@ -187,7 +187,9 @@
 @push('scripts')
 <script>
     function updateQuantity(qty){
-        $
+        $(#rowId).val($(qty).data('rowid'));
+        $(#quantity).val($(qty).val());
+        $('$updateCartQty').submit();
     }
 </script>
 @emdpush
