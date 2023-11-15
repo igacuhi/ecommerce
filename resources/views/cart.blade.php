@@ -87,9 +87,7 @@
                             <td>
                                 <div class="qty-box">
                                     <div class="input-group">
-                                        <input type="number" name="quantity"
-                                            data-rowid="ba02b0dddb000b25445168300c65386d"
-                                            class="form-control input-number" value="{{$item->qty}}">
+                                        <input type="number" name="quantity" data-rowid="{{$item->subtotal}} class="form-control input-number" value="{{$item->qty}}">
                                     </div>
                                 </div>
                             </td>
@@ -186,3 +184,10 @@
 
 </form>
 @endsection
+@push('scripts')
+<script>
+    function updateQuantity(qty){
+        $
+    }
+</script>
+@emdpush
