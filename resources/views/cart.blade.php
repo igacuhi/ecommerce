@@ -178,4 +178,11 @@
         @endif
     </div>
 </section>
+<form id="updateCartQty" action="{{route('cart.update')}}" method="POST">
+    @csrf
+    @method('put')
+    <input type="hidden" id="rowId" name="rowId" />
+    <input type="hidden" id="quantity" name="quantity" />
+
+</form>
 @endsection
