@@ -25,6 +25,7 @@ Route::get('/product/{slug}',[shopcontroller::class,'productDetails'])->name('sh
 Route::get('/cart',[CartController::class,'index'])->name('cart.index');
 Route::post('/cart/store',[CartController::class,'addToCart'])->name('cart.store');
 Route::put('/cart/controller',[cartcontroller::class,'updatecart'])->name('cart.update');
+Route::delete('/cart/remove',[cartcontroller::class,'removeItem'])->name('cart.remove');
 Auth::routes();
 
 Route::middleware('auth')->group(function(){
