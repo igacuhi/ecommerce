@@ -26,6 +26,7 @@ Route::get('/cart',[CartController::class,'index'])->name('cart.index');
 Route::post('/cart/store',[CartController::class,'addToCart'])->name('cart.store');
 Route::put('/cart/controller',[cartcontroller::class,'updatecart'])->name('cart.update');
 Route::delete('/cart/remove',[cartcontroller::class,'removeItem'])->name('cart.remove');
+Route::delete('/cart/clear',[cartcontroller::class,'clearCart'])->name('cart.clear');
 Auth::routes();
 
 Route::middleware('auth')->group(function(){
