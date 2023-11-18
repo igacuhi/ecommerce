@@ -205,6 +205,8 @@
         $(#rowId_D).val(rowId);
         $(#deleteFromCart).submit();
     }
-
+    function clearCart(){
+        $('#clearCart').submit();
+    }
 </script>
 @emdpush
