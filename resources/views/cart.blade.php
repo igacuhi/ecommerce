@@ -201,5 +201,10 @@
         $(#quantity).val($(qty).val());
         $('$updateCartQty').submit();
     }
+    function removeItemFromCart(rowId){
+        $(#rowId_D).val(rowId);
+        $(#deleteFromCart).submit();
+    }
+
 </script>
 @emdpush
