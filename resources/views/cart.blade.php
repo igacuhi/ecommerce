@@ -183,6 +183,16 @@
     <input type="hidden" id="quantity" name="quantity" />
 
 </form>
+<form id="deleteFromCart" action="{{route('cart.remove')}}" method="POST">
+@csrf
+@method('put')
+<input type="hidden" id="rowId_D" name="rowId" />
+</form>
+<form id="clearCart" action="{{route('cart,clear')}}" method="POST">
+@csrf
+@method('delete')
+
+</form>
 @endsection
 @push('scripts')
 <script>
