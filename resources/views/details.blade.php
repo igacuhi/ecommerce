@@ -240,7 +240,7 @@
                                         <i class="fa fa-bookmark fz-16 me-2"></i>
                                         <span>Wishlist</span>
                                     </a>
-                                    <a href="javascript:void(0)"  onclick="event.prevent();document.getElementById('addtocart').submit();"                                     
+                                    <a href="javascript:void(0)"  onclick="event.prevent(); document.getElementById('addtocart').submit();"                                     
                                         id="cartEffect" class="btn btn-solid hover-solid btn-animation">
                                         <i class="fa fa-shopping-cart"></i>
                                         <span>Add To Cart</span>

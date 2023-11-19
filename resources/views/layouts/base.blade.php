@@ -272,6 +272,7 @@
             </li>
         </ul>
     </div>
+    
    @yield('content')
 
     <footer class="footer-sm-space mt-5">
