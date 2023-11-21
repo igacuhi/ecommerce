@@ -118,7 +118,15 @@
                                     <span class="label-text">in fashion</span>
                                 </div>
 
-                                <h3 class="price-detail">$13 <del>$459.00</del><span>55% off</span></h3>
+                                <h3 class="price-detail">
+                                    @if($product->sale_price)
+                                         ${{$product->sale_price}}
+                                            <del>${{$product->regular_price}}</del><span>
+                                                {{round((($product->regular_price - $product->sale_price)/$product->regular_price)*100)}}
+                                                % off</span>
+                                     @else
+                                          {{$product->regular_price}}
+                                </h3>
 
                                 <div class="color-image">
                                     <div class="image-select">
