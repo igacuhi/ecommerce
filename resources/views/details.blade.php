@@ -46,45 +46,36 @@
                                 <div class="col-lg-2">
                                     <div class="details-image-vertical black-slide rounded">
                                         <div>
-                                            <img src="../assets/images/fashion/product/front/1.jpg"
-                                                class="img-fluid blur-up lazyload" alt="">
+                                            <img src="{{asset('assets/images/fashion/product/front')}}/{{$product->image}}" class="img-fluid blur-up lazyload" alt="{{$product->name}}">
                                         </div>
-                                        <div>
-                                            <img src="../assets/images/fashion/2.jpg"
-                                                class="img-fluid blur-up lazyload" alt="">
-                                        </div>
-                                        <div>
-                                            <img src="../assets/images/fashion/3.jpg"
-                                                class="img-fluid blur-up lazyload" alt="">
-                                        </div>
-                                        <div>
-                                            <img src="../assets/images/fashion/4.jpg"
-                                                class="img-fluid blur-up lazyload" alt="">
-                                        </div>
+                                        @if($product->images)
+                                            @php
+                                                $images = explode(',',$product->images);
+                                            @endphp
+                                            @foreach ($images as $image )
+                                                <div>
+                                                    <img src="{{asset('assets/images/fashion/product/front')}}/{{$image}}"
+                                                        class="img-fluid blur-up lazyload" alt="">
+                                                </div>
+                                            @endforeach
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="col-lg-10">
                                     <div class="details-image-1 ratio_asos">
                                         <div>
-                                            <img src="../assets/images/fashion/product/front/1.jpg" id="zoom_01"
-                                                data-zoom-image="assets/images/fashion/1.jpg"
-                                                class="img-fluid w-100 image_zoom_cls-0 blur-up lazyload" alt="">
+                                            <img src="{{asset('assets/images/fashion/product/front')}}/{{$product->image}}" class="img-fluid w-100 image_zoom_cls-0 blur-up lazyload" alt="{{$product->name}}">
                                         </div>
-                                        <div>
-                                            <img src="../assets/images/fashion/2.jpg" id="zoom_02"
-                                                data-zoom-image="assets/images/fashion/2.jpg"
-                                                class="img-fluid w-100 image_zoom_cls-1 blur-up lazyload" alt="">
-                                        </div>
-                                        <div>
-                                            <img src="../assets/images/fashion/3.jpg" id="zoom_03"
-                                                data-zoom-image="assets/images/fashion/3.jpg"
-                                                class="img-fluid w-100 image_zoom_cls-2 blur-up lazyload" alt="">
-                                        </div>
-                                        <div>
-                                            <img src="../assets/images/fashion/4.jpg" id="zoom_04"
-                                                data-zoom-image="assets/images/fashion/4.jpg"
-                                                class="img-fluid w-100 image_zoom_cls-3 blur-up lazyload" alt="">
-                                        </div>
+                                        @if($product->images)
+                                            @php
+                                                $images = explode(',',$product->images);
+                                            @endphp
+                                            @foreach ($images as $image )
+                                                <div>
+                                                    <img src="{{asset('assets/images/fashion/product/front')}}/{{$image}}" class="img-fluid w-100 image_zoom_cls-1 blur-up lazyload" alt="">
+                                                </div>                                          
+                                            @endforeach
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -126,6 +117,7 @@
                                                 % off</span>
                                      @else
                                           {{$product->regular_price}}
+                                    @endif
                                 </h3>
 
                                 <div class="color-image">
@@ -235,8 +227,13 @@
                                 </ul>
 
                                 <div class="mt-2 mt-md-3 border-product">
-                                    <h6 class="product-title hurry-title d-block">Hurry Up! Left <span>10</span> in
-                                        stock</h6>
+                                    <h6 class="product-title hurry-title d-block">
+                                        @if($product->stock_status=='instock')
+                                            Instock
+                                        @else
+                                            Out of Stock
+                                        @endif 
+                                    </h6>
                                     <div class="progress">
                                         <div class="progress-bar" role="progressbar" style="width: 78%"></div>
                                     </div>

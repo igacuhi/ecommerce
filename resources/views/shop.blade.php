@@ -2,14 +2,13 @@
 @push('styles')
 <link id="color-link" rel="stylesheet" type="text/css" href="assets/css/demo2.css">
 <style>
-    nav svg{
-        height:20px;
-    }
-    .product-box .product-details h5 {
-    width: 100%;
-    }
+        nav svg{
+            height:20px;
+        }
+        .product-box .product-details h5 {
+        width: 100%;
+        }
     </style>
-
 @endpush
 @section('content')
 <section class="breadcrumb-section section-b-space" style="padding-top:20px;padding-bottom:20px;">

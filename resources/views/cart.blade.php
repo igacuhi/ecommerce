@@ -50,7 +50,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @for each($CartItems as $Item)     
+                        @foreach($CartItems as $Item)     
                         <tr>
                             <td>
                                 <a href="{{route('shop.products.details',['slug'=>$item->model->slug])}}">
@@ -184,13 +184,13 @@
 
 </form>
 <form id="deleteFromCart" action="{{route('cart.remove')}}" method="POST">
-@csrf
-@method('put')
-<input type="hidden" id="rowId_D" name="rowId" />
+    @csrf
+    @method('put')
+    <input type="hidden" id="rowId_D" name="rowId" />
 </form>
-<form id="clearCart" action="{{route('cart,clear')}}" method="POST">
-@csrf
-@method('delete')
+    <form id="clearCart" action="{{route('cart.clear')}}" method="POST">
+    @csrf
+    @method('delete')
 
 </form>
 @endsection
@@ -209,4 +209,4 @@
         $('#clearCart').submit();
     }
 </script>
-@emdpush
+@endpush
